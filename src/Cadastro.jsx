@@ -58,12 +58,13 @@ function Cadastro() {
     <Container component="section" maxWidth="sm">
         <Box sx={{ 
             mt: 10,
-            backgroundColor: "#EDEDED",
+            backgroundColor: "#EBE3FF",
             padding: "30px",
             borderRadius: "10px",
             display: "flex",
             flexDirection: "column",
             alignItems: "center"
+            
         }}>
             <Typography component="h1" variant='h4'>Cadastrar</Typography>
             { erro && ( <Alert severity="warning" sx={{ mt: 2, mb: 2 }} >Desculpe tente novamente</Alert> ) }

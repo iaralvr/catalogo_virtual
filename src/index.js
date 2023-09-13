@@ -12,37 +12,37 @@ const theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#ff9100',
-      light: '#ffab40',
-      dark: '#f57c00',
+      main: '#db7eff',
+      light: 'rgb(226, 151, 255)',
+      dark: 'rgb(153, 88, 178)',
       contrastText: '#7b19ff',
     },
     secondary: {
-      main: '#7b19ff',
-      light: '#ba8aff',
-      dark: '#6620c5',
+      main: '##be8aec',
+      light: '#rgb(203, 161, 239)',
+      dark: '#rgb(133, 96, 165)',
     },
     text: {
-      primary: '#757575',
+      primary: '#rgba(0, 0, 0, 0.87)',
       secondary: '#9e9e9e',
       hint: '#ffb74d',
       disabled: '#bdbdbd',
     },
     error: {
-      main: '#d50000',
+      main: '##c717c7',
       contrastText: '#ffffff',
     },
     background: {
       default: '#a4a4a4',
     },
     warning: {
-      main: '#ffc80d',
+      main: '#f0a0ff',
     },
     info: {
-      main: '#0073b3',
+      main: '#0288d1',
     },
     success: {
-      main: '#0ebd3a',
+      main: '##2e627d',
     },
     divider: '#5109b3',
   }
