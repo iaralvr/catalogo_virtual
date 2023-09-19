@@ -2,6 +2,8 @@ import { Alert, Box, Button, Checkbox, Container, FormControlLabel, Grid, TextFi
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate, json } from 'react-router-dom';
+import MenuResponsivo from './components/MenuResponsivo'
+
 
 
 
@@ -56,6 +58,8 @@ function Login() {
   }
 
   return (
+    <>
+    <MenuResponsivo></MenuResponsivo>
     <Container component="section" maxWidth="xs" >
         <Box 
         sx={{ 
@@ -99,12 +103,13 @@ function Login() {
                         Esqueci a senha
                     </Grid>
                     <Grid item>
-                        Cadastrar
+                        <a  href='http://localhost:3000/cadastro'>Cadastrar</a>
                     </Grid>
                 </Grid>
             </Box>
         </Box>
     </Container>
+    </>
   )
 }
 

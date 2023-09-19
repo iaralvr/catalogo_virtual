@@ -1,5 +1,6 @@
 import { Alert, Box, Button, Container, Link, TextField } from '@mui/material';
 import React, { useState } from 'react'
+import MenuResponsivo from './components/MenuResponsivo'
 
 function Filmes() {
 
@@ -48,6 +49,8 @@ function Filmes() {
 
 
     return (
+        <>
+        <MenuResponsivo></MenuResponsivo>
         <Container component="section" maxWidth="sm">
             <Box sx={{
                 mt: 10,
@@ -122,9 +125,11 @@ function Filmes() {
                         required
                     />
                     <Button type="submit" variant="contained" fullWidth sx={{ mt: 2, mb: 2 }} >Cadastrar</Button>
+                    
                 </Box>
             </Box>
         </Container>
+        </>
     )
 }
 

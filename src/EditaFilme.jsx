@@ -1,6 +1,7 @@
 import { Box, Container, TextField, Button, Alert } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import MenuResponsivo from './components/MenuResponsivo'
 
 function EditaFilme() {
 
@@ -8,7 +9,7 @@ function EditaFilme() {
     const [titulo, setTitulo] = useState("");
     const [descricao, setDescricao] = useState("");
     const [ano, setAno] = useState("");
-    const [duracao, setDuracao] = useState("");
+    const [temporadas, setTemporadas] = useState("");
     const [categoria, setCategoria] = useState("");
     const [imagem, setImagem] = useState("");
     const [editar, setEditar] = useState(false);
@@ -27,7 +28,7 @@ function EditaFilme() {
                 setTitulo( json.titulo );
                 setDescricao( json.descricao );
                 setAno( json.ano );
-                setDuracao( json.duracao);
+                setTemporadas( json.temporadas);
                 setImagem( json.imagem );
                 setCategoria( json.categoria );
             } else {
@@ -51,7 +52,7 @@ function EditaFilme() {
                     titulo: titulo,
                     descricao: descricao,
                     ano: ano,
-                    duracao: duracao,
+                    temporadas: temporadas,
                     imagem: imagem,
                     categoria: categoria
                 }
@@ -75,6 +76,8 @@ function EditaFilme() {
 
 
     return (
+        <>
+        <MenuResponsivo></MenuResponsivo>
         <Container component="section" maxWidth="sm">
             <Box sx={{
                 mt: 10,
@@ -120,11 +123,11 @@ function EditaFilme() {
                     />
                     <TextField
                         type="text"
-                        label="Duração"
+                        label="Temporadas"
                         variant="filled"
                         margin="normal"
-                        value={duracao}
-                        onChange={(e) => setDuracao(e.target.value)}
+                        value={temporadas}
+                        onChange={(e) => setTemporadas(e.target.value)}
                         fullWidth
                         required
                     />
@@ -153,6 +156,7 @@ function EditaFilme() {
 
             </Box>
         </Container>
+        </>
     )
 }
 
