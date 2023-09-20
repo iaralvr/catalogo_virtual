@@ -7,6 +7,7 @@ import MenuResponsivo from './components/MenuResponsivo'
 
 
 
+
 function Login() {
 
   const [ email, setEmail ] = useState( "" );
@@ -21,7 +22,6 @@ function Login() {
   useEffect( () => {
 
     if( login ) {
-        localStorage.setItem( "usuario" , JSON.stringify( {email: email } ) );
         setEmail( "" );
         setSenha( "" );
         navigate( "/" );
@@ -48,8 +48,10 @@ function Login() {
     .then( ( json ) => {
 
         if( json.user ) {
+            localStorage.setItem("usuario" , JSON.stringify(json.user._id));
             setLogin( true );
         } else {
+            localStorage.removeItem("usuario");
             setErro( true );
         }
     } )

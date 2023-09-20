@@ -16,7 +16,7 @@ function Filmes() {
 
     function Cadastrar(evento) {
         evento.preventDefault();
-        fetch( process.env.REACT_APP_BACKEND + "filmes", {
+        fetch( process.env.REACT_APP_BACKEND + "produtos", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -28,7 +28,8 @@ function Filmes() {
                     ano: ano,
                     duracao: duracao,
                     imagem: imagem,
-                    categoria: categoria
+                    categoria: categoria,
+                    usuario:localStorage.getItem( "usuario")
                 }
             )
         })
@@ -61,8 +62,8 @@ function Filmes() {
                 flexDirection: "column",
                 alignItems: "center"
             }}>
-                { erro && (<Alert severity="warning">Filme já cadastrado. Tente novamente por favor!</Alert>) }
-                { cadastro && ( <Alert severity="success">Obrigado por cadastrar seu filme!</Alert> )}
+                { erro && (<Alert severity="warning">Série/filme já cadastrada. Tente novamente por favor!</Alert>) }
+                { cadastro && ( <Alert severity="success">Obrigado por cadastrar sua série/filme!</Alert> )}
                 <Box component="form" onSubmit={Cadastrar}>
                     <TextField
                         type="text"

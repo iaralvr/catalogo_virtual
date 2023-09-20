@@ -16,7 +16,8 @@ function EditaFilme() {
     const [erro, setErro] = useState(false);
 
     useEffect( () => {
-        fetch( process.env.REACT_APP_BACKEND + "filmes/" + id, {
+        const usuario= localStorage.getItem("usuario")
+        fetch( process.env.REACT_APP_BACKEND + "produtos/"+ usuario + "/" + id, {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json'
@@ -28,7 +29,7 @@ function EditaFilme() {
                 setTitulo( json.titulo );
                 setDescricao( json.descricao );
                 setAno( json.ano );
-                setTemporadas( json.temporadas);
+                setTemporadas( json.duracao);
                 setImagem( json.imagem );
                 setCategoria( json.categoria );
             } else {
@@ -41,7 +42,7 @@ function EditaFilme() {
     function Editar( evento ) {
         evento.preventDefault();
 
-        fetch( process.env.REACT_APP_BACKEND + "filmes", {
+        fetch( process.env.REACT_APP_BACKEND + "produtos", {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json'
@@ -52,9 +53,10 @@ function EditaFilme() {
                     titulo: titulo,
                     descricao: descricao,
                     ano: ano,
-                    temporadas: temporadas,
+                    duracao: temporadas,
                     imagem: imagem,
-                    categoria: categoria
+                    categoria: categoria,
+                    usuario: localStorage.getItem("usuario")
                 }
             )
         })
@@ -89,7 +91,7 @@ function EditaFilme() {
                 alignItems: "center"
             }}>
                 { erro && ( <Alert severity="warning">{erro}</Alert>)}
-                { editar && ( <Alert severity="success">Filme editado com sucesso</Alert>)}
+                { editar && ( <Alert severity="success">Série editada com sucesso</Alert>)}
                 <Box component="form" onSubmit={Editar}>
                     <TextField
                         type="text"

@@ -6,7 +6,7 @@ import Foto from "./Logo";
 import img from "./Logofoto.png"
 
 
-const settings = ['Minha Conta','Entrar', 'Favoritos', '', 'Sair'];
+const settings = ['Minha Conta','Entrar',  'Sair'];
 function MenuResponsivo() {
 
     const [anchorElNav, setAnchorElNav] = useState(null);
